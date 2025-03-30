@@ -113,11 +113,13 @@ weeks_on_char()
 cols_charts_2 = st.columns(2)
 
 with cols_charts_2[0]:
+    st.markdown('''
+        ###   Artistas vs. Posição Máxima     
+                ''')
     fig = px.imshow(
         df_art_peak,
         labels={"x": "Peak Position", "y": "Artista"},
         color_continuous_scale="Blues",
-        title="Artistas vs. Posição Máxima",
     )
 
     fig.update_xaxes(title="Peak Position", tickangle=45)
