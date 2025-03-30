@@ -5,7 +5,7 @@ from src.utils.cards import create_cards
 from src.main import read_data
 
 
-st.set_page_config(page_title="Billaboard Top Song", layout="wide")
+st.set_page_config(page_title="Billaboard Top Songs", layout="wide")
 (
     df,
     genero_mais_popular_stream,
