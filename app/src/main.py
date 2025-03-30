@@ -3,7 +3,7 @@ import plotly.express as px
 
 def read_data():
     
-    df = pd.read_csv("app//data/input/music_dataset.csv")
+    df = pd.read_csv("data/input/music_dataset.csv")
 
     df.groupby(["Release Year"])[
         "Song"

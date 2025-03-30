@@ -48,7 +48,7 @@ with cols_card[2]:
     )
 with cols_card[3]:
     create_cards(
-        "Musica mais TikTok Virality",
+        "Música Mais Viral no TikTok",
         virality_musica,
         f'Viral no TikTok: {virality_musica_tt}%',
     )
@@ -68,7 +68,7 @@ with cols_charts[0]:
         x="Release Year",
         y="Streams",
         color="Genre",
-        title="Popularidade dos Gêneros através dos anos",
+        title="Popularidade dos Gêneros ao Longo dos Anos",
     )
 
     st.plotly_chart(fig_genre_year)
@@ -87,13 +87,16 @@ with cols_charts[1]:
         x="Artist",
         y="Streams",
         color="Release Year",
-        title="Popularidade dos Gêneros através dos anos",
+        title="Popularidade dos Artistas ao Longo dos Anos",
     )
 
     st.plotly_chart(fig_art)
 
 
 def weeks_on_char():
+    st.markdown('''
+        ### Musicas com maiores sequencias de semanas por genero musical
+                ''')
     select_mult = st.multiselect(
         "Selecione um genero: ", options=df_week["Genre"].unique(), default=["Blues"]
     )
@@ -114,7 +117,7 @@ with cols_charts_2[0]:
         df_art_peak,
         labels={"x": "Peak Position", "y": "Artista"},
         color_continuous_scale="Blues",
-        title="Heatmap: Artista vs. Peak Position",
+        title="Artistas vs. Posição Máxima",
     )
 
     fig.update_xaxes(title="Peak Position", tickangle=45)
@@ -124,6 +127,9 @@ with cols_charts_2[0]:
 
 
 with cols_charts_2[1]:
+    st.markdown('''
+        ### Músicas Mais Ouvidas por Artista
+                ''')
     select_art = st.selectbox(
         "Selecione um Artista",
         options=df_art_song["Artist"].unique(),
