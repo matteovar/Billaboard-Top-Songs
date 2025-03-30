@@ -4,7 +4,7 @@ import plotly.express as px
 
 def read_data():
 
-    df = pd.read_csv('data/input/music_dataset.csv')
+    df = pd.read_csv("data/input/music_dataset.csv")
 
     df.groupby(["Release Year"])[
         "Song"
@@ -19,7 +19,6 @@ def read_data():
     )
     artist_mais_popular = df_art.iloc[0]["Artist"]
     artist_mais_popular_streams = df_art.iloc[0]["Streams"]
-    
 
     # Estilo Musical mais popular
     df_genre = (
@@ -41,14 +40,14 @@ def read_data():
     musica_mais_popular_streams = df_song.iloc[0]["Streams"]
 
     df_song_tiktok = (
-        df.groupby(["Song","TikTok Virality"])["Streams"]
+        df.groupby(["Song", "TikTok Virality"])["Streams"]
         .mean()
         .reset_index()
         .sort_values(["TikTok Virality", "Streams"], ascending=False)
     )
     virality_musica = df_song_tiktok.iloc[0]["Song"]
     virality_musica_tt = df_song_tiktok.iloc[0]["TikTok Virality"]
-    
+
     df_stream_by_genre = (
         df.groupby(["Genre", "Release Year"])["Streams"].sum().reset_index()
     )
