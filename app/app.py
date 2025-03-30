@@ -98,7 +98,7 @@ def weeks_on_char():
         ### Musicas com maiores sequencias de semanas por genero musical
                 ''')
     select_mult = st.multiselect(
-        "Selecione um genero: ", options=df_week["Genre"].unique(), default=["Blues"]
+        "Selecione um genero musical: ", options=df_week["Genre"].unique(), default=["Blues"]
     )
 
     filter_weeks = df_week[df_week["Genre"].isin(select_mult)]
