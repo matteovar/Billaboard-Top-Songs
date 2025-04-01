@@ -1,2 +1,2 @@
-## ALink para acesso do Streamlit:
+## Link para acesso do Streamlit:
 [Acesso](https://billaboard-top-songs.streamlit.app)
